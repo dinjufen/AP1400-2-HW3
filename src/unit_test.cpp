@@ -3,7 +3,7 @@
 #include "gmock/gmock.h"
 #include "bst.h"
 
-/*
+
 TEST(HW3Test, TEST1) {
 
     BST::Node left{10, nullptr, nullptr};
@@ -160,6 +160,8 @@ TEST(HW3Test, TEST12) {
     EXPECT_EQ((*node)->value, 10);
     EXPECT_EQ((*node)->left->value, 7);
     EXPECT_EQ((*node)->right->value, 15);
+    auto ret = ::testing::Test::HasFailure();
+    std::cout << "ret: " << ret << std::endl;
 }
 
 TEST(HW3Test, TEST13) {
@@ -175,6 +177,7 @@ TEST(HW3Test, TEST13) {
     EXPECT_EQ(node, nullptr);
 }
 
+
 TEST(HW3Test, TEST14) {
     BST bst{};
     bst.add_node(25);
@@ -185,13 +188,13 @@ TEST(HW3Test, TEST14) {
     bst.add_node(7);
     
     std::cout << "here" << std::endl;
-    BST::Node** node{bst.find_parrent(15)};
+    BST::Node** node{ bst.find_parrent(15) };
     std::cout << "here2" << std::endl;
     EXPECT_EQ((*node)->value, 10);
     EXPECT_EQ((*node)->left->value, 7);
     EXPECT_EQ((*node)->right->value, 15);
 }
-
+/*
 TEST(HW3Test, TEST15) {
     BST bst{};
     bst.add_node(25);
